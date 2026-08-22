@@ -27,6 +27,9 @@ jobs:
           components: rustfmt, clippy
           override: true
 
+      - name: Install bpf-linker
+        run: .ci/common/scripts/install-bpf-linker.sh
+
       - name: Run clippy
         run: cargo clippy -- -D warnings
 
@@ -67,6 +70,9 @@ jobs:
           toolchain: stable
           override: true
 
+      - name: Install bpf-linker
+        run: .ci/common/scripts/install-bpf-linker.sh
+
       - name: Run tests
         run: cargo test --release
 
@@ -83,6 +89,9 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
+
+      - name: Install bpf-linker
+        run: .ci/common/scripts/install-bpf-linker.sh
 
       - name: Install tarpaulin
         run: cargo install cargo-tarpaulin
@@ -122,6 +131,9 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
+
+      - name: Install bpf-linker
+        run: .ci/common/scripts/install-bpf-linker.sh
 
       - name: Check environment
         run: |

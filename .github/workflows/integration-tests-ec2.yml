@@ -113,6 +113,8 @@ jobs:
             aws s3 cp s3://${BUCKET}/${S3_PREFIX}/nfm-source.tar.gz ./nfm-source.tar.gz
             tar xzf nfm-source.tar.gz
 
+            ./.ci/common/scripts/install-bpf-linker.sh
+
             ./packaging/linux/create_rpm.sh
 
             echo \"=== Build complete ===\"
